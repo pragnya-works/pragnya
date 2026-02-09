@@ -1,0 +1,45 @@
+# Pragnya - Conscious Intelligence, Exceptional Products
+
+> Wisdom-driven software agency
+
+## Overview
+
+Pragnya is a software agency dedicated to building exceptional products through conscious intelligence. We architect resilient systems that scale from first principles, applying deep technical intuition to eliminate technical debt at the design phase.
+
+## Philosophy
+
+- **Architectural Sovereignty**: We engineer systems, not just features. We maintain strict architectural integrity to ensure products evolve without inherited complexity.
+- **First-Principles Engineering**: We apply technical wisdom by returning to first principles, building lean, resilient foundations that outperform the status quo.
+
+## Products
+
+### Edward
+
+Edward is our first product - an autonomous engineering engine that bridges the gap between high-level architectural intent and production-ready code. It codifies technical wisdom to automate the heavy lifting of system design.
+
+**Key Features:**
+- Intelligent Design: Built with conscious architecture patterns for scalability and performance
+- High Performance: Optimized at every layer for lightning-fast interactions
+- Pragmatic Security: Enterprise-grade security defaults out of the box
+
+**Links:**
+- GitHub: https://github.com/pragnya-works/edward
+- Website: https://edward.pragnyaa.in
+
+## Contact
+
+- Website: https://pragnyaa.in
+- GitHub: https://github.com/pragnya-works
+
+## Technologies
+
+We work with modern technologies including:
+- Next.js and React for web applications
+- TypeScript for type-safe development
+- Tailwind CSS for styling
+- Framer Motion for animations
+- System architecture and first-principles engineering
+
+## Keywords
+
+software agency, pragnya, edward, autonomous engineering, wisdom-driven development, first-principles engineering, system architecture, resilient systems, technical wisdom, conscious intelligence, software development, India
