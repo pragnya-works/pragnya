@@ -78,6 +78,10 @@ export const ProductEdward = () => {
       aria-labelledby="product-heading"
     >
       <div 
+        className="absolute md:hidden top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" 
+        aria-hidden="true"
+      />
+      <div 
         className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] brightness-100 contrast-150" 
         aria-hidden="true"
       />

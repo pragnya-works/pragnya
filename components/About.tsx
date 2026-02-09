@@ -19,7 +19,7 @@ export const About = () => {
   return (
     <section 
       id="about" 
-      className="py-32 px-6 md:px-12 relative overflow-hidden"
+      className="py-16 md:py-32 px-6 md:px-12 relative overflow-hidden"
       aria-labelledby="about-heading"
     >
       <div 
