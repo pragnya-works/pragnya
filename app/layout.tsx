@@ -1,17 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
+import { Geist, Playfair_Display } from "next/font/google";
+import { organizationJsonLd, siteConfig } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
-  display: "swap",
-  preload: true,
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
   display: "swap",
   preload: true,
@@ -24,40 +17,38 @@ const playfairDisplay = Playfair_Display({
   preload: true,
 });
 
-const siteUrl = "https://pragnyaa.in";
-const siteName = "Pragnya";
-const siteTitle = "Pragnya | Conscious Intelligence, Exceptional Products";
-const siteDescription = "Pragnya is a wisdom-driven software agency building exceptional products through conscious intelligence. We architect resilient systems that scale from first principles.";
-
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0a0a0a",
+  themeColor: "#050505",
+  colorScheme: "dark",
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: siteTitle,
-    template: `%s | ${siteName}`,
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.name}`,
   },
-  description: siteDescription,
-  keywords: [
-    "Software Agency",
-    "Pragnya",
-    "Wisdom-driven development",
-    "Edward",
-    "Software Development",
-    "System Architecture",
-    "First-principles engineering",
-    "Autonomous engineering",
-    "India",
-    "Technical wisdom",
-    "Resilient systems",
-  ],
-  authors: [{ name: "Pragnya Works" }],
-  creator: "Pragnya Works",
-  publisher: "Pragnya Works",
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  keywords: [...siteConfig.keywords],
+  authors: [{ name: siteConfig.legalName, url: siteConfig.url }],
+  creator: siteConfig.legalName,
+  publisher: siteConfig.legalName,
+  formatDetection: {
+    telephone: false,
+    address: false,
+    email: false,
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any", type: "image/x-icon" },
+      { url: "/pragnya-mark.svg", sizes: "any", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
   robots: {
     index: true,
     follow: true,
@@ -72,27 +63,27 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: siteUrl,
-    title: siteTitle,
-    description: siteDescription,
-    siteName,
+    url: siteConfig.url,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
     images: [
       {
-        url: "/og.png",
+        url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: "Pragnya - Conscious Intelligence, Exceptional Products",
+        alt: "Pragnya website preview",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteTitle,
-    description: siteDescription,
-    images: ["/og.png"],
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
   },
   alternates: {
-    canonical: siteUrl,
+    canonical: siteConfig.url,
   },
   category: "technology",
 };
@@ -102,34 +93,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: siteName,
-    url: siteUrl,
-    logo: `${siteUrl}/logo.png`,
-    description: siteDescription,
-    sameAs: [
-      "https://github.com/pragnya-works",
-    ],
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "Business Inquiries",
-      url: siteUrl,
-    },
-  };
-
   return (
     <html lang="en" className="dark">
       <head>
-        <link rel="manifest" href="/manifest.json" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} antialiased`}
+        className={`${geistSans.variable} ${playfairDisplay.variable} antialiased`}
       >
         <a
           href="#main-content"
@@ -139,7 +112,6 @@ export default function RootLayout({
         </a>
         <div className="fixed inset-0 -z-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20" />
         {children}
-        <Analytics />
       </body>
     </html>
   );

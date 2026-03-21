@@ -23,12 +23,12 @@ We specialize in:
 
 ## 💡 Our First Product: Edward
 
-**Edward** is an autonomous engineering engine that bridges the gap between high-level architectural intent and production-ready code. It codifies technical wisdom to automate the heavy lifting of system design.
+**Edward** is an agentic web app builder. You describe the product in chat, Edward plans and generates the app in a sandbox, and you can preview the result before syncing it back to GitHub.
 
 ### Key Features:
-- 🧠 **Intelligent Design**: Built with conscious architecture patterns for scalability and performance
-- ⚡ **High Performance**: Optimized at every layer to ensure lightning-fast interactions
-- 🛡️ **Pragmatic Security**: Enterprise-grade security defaults out of the box
+- 🧠 **Start with a Prompt**: Describe the product in chat and Edward turns the brief into a working app
+- ⚡ **Agentic Build Runs**: Edward plans, generates, and updates the app inside a sandbox instead of stopping at a one-shot draft
+- 🛡️ **Preview, Then Sync**: Review the output, keep steering the run, and sync the final result back to GitHub when it is ready
 
 **Links:**
 - GitHub: [github.com/pragnya-works/edward](https://github.com/pragnya-works/edward)
@@ -38,7 +38,7 @@ We specialize in:
 
 Interested in working with us? Reach out:
 
-- **Email**: [shubho@pragnyaa.in](mailto:shubho@pragnyaa.in)
+- **Email**: [founder@pragnyaa.in](mailto:founder@pragnyaa.in)
 - **Website**: [pragnyaa.in](https://pragnyaa.in)
 - **GitHub**: [github.com/pragnya-works](https://github.com/pragnya-works)
 
@@ -81,4 +81,3 @@ Built with performance in mind:
 ## License
 
 Built with Wisdom by Pragnya Works.
-
