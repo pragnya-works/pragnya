@@ -32,7 +32,7 @@ We specialize in:
 
 **Links:**
 - GitHub: [github.com/pragnya-works/edward](https://github.com/pragnya-works/edward)
-- Website: [edward.pragnyaa.in](https://edward.pragnyaa.in)
+- Website: [edwardd.app](https://edwardd.app)
 
 ## 📧 Get in Touch
 
