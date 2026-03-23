@@ -2,6 +2,8 @@
 
 > **Conscious Intelligence, Exceptional Products**
 
+[![Pragnya OG image](https://pragnyaa.in/opengraph-image)](https://pragnyaa.in)
+
 Pragnya is a wisdom-driven software agency that builds exceptional products through conscious intelligence. We architect resilient systems that scale from first principles, eliminating technical debt at the design phase.
 
 ## 🎯 Our Philosophy
