@@ -105,7 +105,13 @@ export function SocialImageCard() {
           padding: "72px 84px",
         }}
       >
-        <div style={{ display: "flex", width: 470 }}>
+        <div
+          style={{
+            display: "flex",
+            width: 520,
+            justifyContent: "center",
+          }}
+        >
           <PragnyaWordmark />
         </div>
 
