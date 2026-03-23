@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Mail } from "lucide-react";
+import { PragnyaLogo } from "@/components/PragnyaLogo";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -16,18 +17,13 @@ export const Navbar = () => {
     >
       <Link
         href="/"
-        className="flex items-center gap-2"
+        className="flex items-center"
         aria-label="Pragnya home"
       >
-        <div
-          className="w-8 h-8 bg-accent-gold rounded-full flex items-center justify-center font-display font-bold text-black text-xl"
-          aria-hidden="true"
-        >
-          P
-        </div>
-        <span className="font-display text-xl font-semibold tracking-tight">
-          Pragnya
-        </span>
+        <PragnyaLogo
+          className="h-8 w-auto sm:h-9"
+          priority
+        />
       </Link>
 
       <div className="hidden md:flex items-center gap-8 text-sm font-medium text-white/70">

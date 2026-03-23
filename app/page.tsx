@@ -3,16 +3,27 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { ProductEdward } from "@/components/ProductEdward";
-import { siteConfig } from "@/lib/site";
+import { PragnyaLogo } from "@/components/PragnyaLogo";
+import { schemaIds, siteConfig } from "@/lib/site";
 
 const currentYear = new Date().getFullYear();
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Pragnya | AI Product Development and Software Agency",
+    absolute: siteConfig.homeTitle,
   },
-  description:
-    "Pragnya builds AI products, modern web applications, and resilient software systems from first principles.",
+  description: siteConfig.description,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   alternates: {
     canonical: siteConfig.url,
   },
@@ -21,19 +32,49 @@ export const metadata: Metadata = {
 export default function Home() {
   const webpageJsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: siteConfig.title,
-    url: siteConfig.url,
-    description: siteConfig.description,
-    isPartOf: {
-      "@type": "WebSite",
-      name: siteConfig.name,
-      url: siteConfig.url,
-    },
-    about: {
-      "@type": "Organization",
-      name: siteConfig.legalName,
-    },
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": schemaIds.webpage,
+        name: siteConfig.homeTitle,
+        url: siteConfig.url,
+        description: siteConfig.description,
+        inLanguage: "en",
+        isPartOf: {
+          "@id": schemaIds.website,
+        },
+        about: {
+          "@id": schemaIds.organization,
+        },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: `${siteConfig.url}${siteConfig.ogImage}`,
+        },
+        mainEntity: {
+          "@id": schemaIds.service,
+        },
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": schemaIds.service,
+        name: "AI Product Development and Software Engineering",
+        url: siteConfig.url,
+        description: siteConfig.description,
+        provider: {
+          "@id": schemaIds.organization,
+        },
+        serviceType: [
+          "AI product development",
+          "Web application development",
+          "Software architecture",
+          "Resilient software systems",
+        ],
+        audience: {
+          "@type": "Audience",
+          audienceType: "Founders and teams",
+        },
+      },
+    ],
   };
 
   return (
@@ -50,12 +91,7 @@ export default function Home() {
       </main>
 
       <footer className="py-20 px-6 border-t border-white/5 flex flex-col items-center">
-        <div
-          className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center font-display font-bold text-white/20 text-2xl mb-6"
-          aria-hidden="true"
-        >
-          P
-        </div>
+        <PragnyaLogo className="mb-6 h-12 w-auto sm:h-14" loading="lazy" />
         <p className="text-sm font-medium tracking-wide text-white/60">
           &copy; {currentYear} Pragnya Works. Built with Wisdom.
         </p>
