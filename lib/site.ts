@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Pragnya",
   legalName: "Pragnya Works",
-  url: "https://pragnyaa.in",
+  url: "https://www.pragnyaa.in",
   title: "Pragnya | Conscious Intelligence, Exceptional Products",
   homeTitle: "Pragnya | AI Product Development and Software Agency",
   description:
