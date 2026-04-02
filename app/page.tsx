@@ -9,6 +9,7 @@ import { schemaIds, siteConfig } from "@/lib/site";
 const currentYear = new Date().getFullYear();
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     absolute: siteConfig.homeTitle,
   },
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: siteConfig.url,
+    canonical: "/",
   },
 };
 

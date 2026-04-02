@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   compress: true,
   reactStrictMode: true,
   typedRoutes: true,
+  trailingSlash: false,
 
   experimental: {
     optimizePackageImports: ["lucide-react"],

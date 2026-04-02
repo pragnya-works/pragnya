@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: `https://www.pragnyaa.in/sitemap.xml`,
-    host: "www.pragnyaa.in",
+    sitemap: `${siteConfig.url}/sitemap.xml`,
+    host: siteConfig.url.replace(/^https?:\/\//, ""),
   };
 }
