@@ -1,20 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Playfair_Display } from "next/font/google";
+import { Plus_Jakarta_Sans, Newsreader } from "next/font/google";
 import { organizationJsonLd, siteConfig } from "@/lib/site";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
   preload: true,
 });
 
-const playfairDisplay = Playfair_Display({
+const newsreader = Newsreader({
   variable: "--font-display",
   subsets: ["latin"],
   display: "swap",
   preload: true,
+  weight: ["400", "500", "600", "700"],
 });
 
 export const viewport: Viewport = {
@@ -88,7 +89,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${playfairDisplay.variable} antialiased`}
+        className={`${plusJakartaSans.variable} ${newsreader.variable} antialiased`}
       >
         <a
           href="#main-content"
