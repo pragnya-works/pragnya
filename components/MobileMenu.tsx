@@ -36,14 +36,19 @@ export function MobileMenu() {
       </button>
 
       <div
-        className={`absolute inset-x-0 top-16 flex h-[calc(100vh-4rem)] flex-col items-start justify-start bg-ink/60 p-6 shadow-2xl backdrop-blur-2xl transition-all duration-300 ease-out ${
+        className={`absolute inset-x-0 top-16 h-[calc(100vh-4rem)] bg-ink/40 backdrop-blur-[120px] transition-all duration-300 ease-out ${
           open
             ? "pointer-events-auto opacity-100 translate-y-0"
             : "pointer-events-none opacity-0 -translate-y-2"
         }`}
         aria-hidden={!open}
+        onClick={() => setOpen(false)}
       >
-        <nav className="flex w-full max-w-xs flex-col gap-4" aria-label="Mobile navigation">
+        <nav
+          className="flex w-full flex-col gap-4 border-b border-paper/5 bg-ink p-6 shadow-2xl"
+          aria-label="Mobile navigation"
+          onClick={(e) => e.stopPropagation()}
+        >
           {links.map((link) => (
             <a
               key={link.href}
