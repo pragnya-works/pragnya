@@ -36,7 +36,7 @@ export function MobileMenu() {
       </button>
 
       <div
-        className={`absolute inset-x-0 top-16 border-b border-paper/5 bg-ink/80 p-6 shadow-lg backdrop-blur-md transition-all duration-300 ease-out ${
+        className={`absolute inset-x-0 top-16 h-[calc(100vh-4rem)] border-b border-paper/5 bg-ink/40 p-6 shadow-2xl backdrop-blur-2xl transition-all duration-300 ease-out ${
           open
             ? "pointer-events-auto opacity-100 translate-y-0"
             : "pointer-events-none opacity-0 -translate-y-2"
@@ -44,28 +44,28 @@ export function MobileMenu() {
         aria-hidden={!open}
       >
         <nav className="flex flex-col gap-4" aria-label="Mobile navigation">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                {...(link.external
-                  ? { target: "_blank", rel: "noopener noreferrer" }
-                  : {})}
-                className="text-sm font-medium text-paper/80 transition hover:text-accent"
-              >
-                {link.label}
-              </a>
-            ))}
+          {links.map((link) => (
             <a
-              href="mailto:founder@pragnyaa.in"
+              key={link.href}
+              href={link.href}
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center rounded-sm border border-paper/10 bg-paper/5 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-paper transition hover:border-accent/30 hover:text-accent"
+              {...(link.external
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+              className="text-sm font-medium text-paper/80 transition hover:text-accent"
             >
-              Get in touch
+              {link.label}
             </a>
-          </nav>
-        </div>
+          ))}
+          <a
+            href="mailto:founder@pragnyaa.in"
+            onClick={() => setOpen(false)}
+            className="mt-2 flex w-full items-center justify-center rounded-sm border border-paper/10 bg-paper/5 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-paper transition hover:border-accent/30 hover:text-accent"
+          >
+            Get in touch
+          </a>
+        </nav>
+      </div>
       </div>
   );
 }
