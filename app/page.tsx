@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
+import { Services } from "@/components/Services";
 import { About } from "@/components/About";
 import { ProductEdward } from "@/components/ProductEdward";
-import { PragnyaLogo } from "@/components/PragnyaLogo";
+import { Contact } from "@/components/Contact";
+import { Footer } from "@/components/Footer";
 import { schemaIds, siteConfig } from "@/lib/site";
-
-const currentYear = new Date().getFullYear();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -80,23 +80,16 @@ export default function Home() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageJsonLd) }}
-      />
+      <script type="application/ld+json">{JSON.stringify(webpageJsonLd).replace(/</g, "\\u003c")}</script>
       <Navbar />
-      <main className="min-h-screen" id="main-content">
+      <main id="main-content">
         <Hero />
+        <Services />
         <About />
         <ProductEdward />
+        <Contact />
       </main>
-
-      <footer className="py-20 px-6 border-t border-white/5 flex flex-col items-center">
-        <PragnyaLogo className="mb-6 h-12 w-auto sm:h-14" loading="lazy" />
-        <p className="text-sm font-medium tracking-wide text-white/60">
-          &copy; {currentYear} Pragnya Works. Built with Wisdom.
-        </p>
-      </footer>
+      <Footer />
     </>
   );
 }

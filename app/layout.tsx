@@ -1,20 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Playfair_Display } from "next/font/google";
+import { Plus_Jakarta_Sans, Newsreader } from "next/font/google";
 import { organizationJsonLd, siteConfig } from "@/lib/site";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
   preload: true,
 });
 
-const playfairDisplay = Playfair_Display({
+const newsreader = Newsreader({
   variable: "--font-display",
   subsets: ["latin"],
   display: "swap",
   preload: true,
+  weight: ["400", "500", "600", "700"],
 });
 
 export const viewport: Viewport = {
@@ -82,21 +83,35 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        <link
+          rel="preload"
+          as="image"
+          href="/pragnya-mark-sm.png"
+          fetchPriority="high"
         />
+        <script type="application/ld+json">
+          {JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c")}
+        </script>
       </head>
       <body
-        className={`${geistSans.variable} ${playfairDisplay.variable} antialiased`}
+        className={`${plusJakartaSans.variable} ${newsreader.variable} antialiased`}
       >
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-accent-gold focus:text-black focus:rounded-md"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:rounded-sm focus:bg-accent focus:px-4 focus:py-2 focus:text-ink"
         >
           Skip to main content
         </a>
-        <div className="fixed inset-0 -z-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20" />
+        <noscript>
+          <style>{`
+            .reveal,
+            .reveal.is-visible {
+              opacity: 1 !important;
+              transform: none !important;
+              transition: none !important;
+            }
+          `}</style>
+        </noscript>
         {children}
       </body>
     </html>

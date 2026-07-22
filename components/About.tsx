@@ -1,65 +1,58 @@
-const philosophyItems = [
+import { ScrollReveal } from "@/components/ScrollReveal";
+
+const values = [
   {
-    title: "Architectural Sovereignty",
+    title: "Architecture-first thinking",
     description:
-      "We do not just ship features; we engineer systems. By protecting architectural integrity early, every product stays easier to evolve, scale, and maintain.",
+      "We protect architectural integrity early, so every product stays easier to evolve, scale, and maintain as requirements change.",
   },
   {
-    title: "First-Principles Engineering",
+    title: "First-principles engineering",
     description:
-      "We return to first principles to remove accidental complexity at the design stage, building lean foundations for AI products, SaaS platforms, and long-lived web applications.",
+      "We strip away accidental complexity at the design stage, building lean foundations for AI products, SaaS platforms, and long-lived web applications.",
   },
 ] as const;
 
-export const About = () => {
+export function About() {
   return (
     <section
       id="about"
-      className="py-16 md:py-32 px-6 md:px-12 relative overflow-hidden"
+      className="border-t border-paper/5 bg-surface px-6 py-24 md:px-12 md:py-32"
       aria-labelledby="about-heading"
     >
-      <div
-        className="absolute top-0 left-1/2 h-px w-full -translate-x-1/2 bg-gradient-to-r from-transparent via-white/10 to-transparent"
-        aria-hidden="true"
-      />
+      <div className="mx-auto max-w-6xl">
+        <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
+          <ScrollReveal>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+              How we work
+            </p>
+            <h2
+              id="about-heading"
+              className="balanced-text font-display text-4xl font-medium leading-[1.15] tracking-tight text-paper md:text-5xl"
+            >
+              We build the right system, not just the first system.
+            </h2>
+          </ScrollReveal>
 
-      <div className="mx-auto max-w-4xl text-center motion-safe:animate-fade-up">
-        <div className="font-display text-accent-gold text-xs uppercase tracking-[0.3em] font-bold mb-8">
-          Our Philosophy
-        </div>
-
-        <h2
-          id="about-heading"
-          className="text-4xl md:text-5xl lg:text-6xl font-display font-medium mb-12 leading-[1.2] tracking-tight"
-        >
-          Pragnya isn&apos;t just about building software, it&apos;s about
-          deeply <em className="text-white not-italic">understanding</em> the
-          problem to build the right system.
-        </h2>
-
-        <p className="balanced-text mx-auto max-w-2xl text-base leading-relaxed text-white/55 md:text-lg">
-          We partner on product strategy, application architecture, performance,
-          and implementation so the final system is indexable, fast, and stable
-          from day one.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left mt-20">
-          {philosophyItems.map((item) => (
-            <article key={item.title} className="space-y-4">
-              <div
-                className="h-px w-12 bg-accent-gold/40"
-                aria-hidden="true"
-              />
-              <h3 className="text-white font-bold text-sm uppercase tracking-widest">
-                {item.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-white/60">
-                {item.description}
-              </p>
-            </article>
-          ))}
+          <div className="space-y-12 lg:pt-2">
+            {values.map((value, index) => (
+              <ScrollReveal
+                key={value.title}
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                <div className="border-l border-accent/30 pl-6">
+                  <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-paper">
+                    {value.title}
+                  </h3>
+                  <p className="leading-relaxed text-paper-muted">
+                    {value.description}
+                  </p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
-};
+}
