@@ -36,14 +36,14 @@ export function MobileMenu() {
       </button>
 
       <div
-        className={`absolute inset-x-0 top-16 h-[calc(100vh-4rem)] border-b border-paper/5 bg-ink/40 p-6 shadow-2xl backdrop-blur-2xl transition-all duration-300 ease-out ${
+        className={`absolute inset-x-0 top-16 flex h-[calc(100vh-4rem)] flex-col items-center justify-center bg-ink p-6 shadow-2xl transition-all duration-300 ease-out ${
           open
             ? "pointer-events-auto opacity-100 translate-y-0"
             : "pointer-events-none opacity-0 -translate-y-2"
         }`}
         aria-hidden={!open}
       >
-        <nav className="flex flex-col gap-4" aria-label="Mobile navigation">
+        <nav className="flex w-full max-w-xs flex-col gap-6 text-center" aria-label="Mobile navigation">
           {links.map((link) => (
             <a
               key={link.href}
@@ -52,7 +52,7 @@ export function MobileMenu() {
               {...(link.external
                 ? { target: "_blank", rel: "noopener noreferrer" }
                 : {})}
-              className="text-sm font-medium text-paper/80 transition hover:text-accent"
+              className="text-base font-medium text-paper/90 transition hover:text-accent"
             >
               {link.label}
             </a>
@@ -60,7 +60,7 @@ export function MobileMenu() {
           <a
             href="mailto:founder@pragnyaa.in"
             onClick={() => setOpen(false)}
-            className="mt-2 flex w-full items-center justify-center rounded-sm border border-paper/10 bg-paper/5 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-paper transition hover:border-accent/30 hover:text-accent"
+            className="mt-2 flex w-full items-center justify-center rounded-sm border border-paper/10 bg-paper/5 px-4 py-3 text-xs font-semibold uppercase tracking-wider text-paper transition hover:border-accent/30 hover:text-accent"
           >
             Get in touch
           </a>
