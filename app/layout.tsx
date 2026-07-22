@@ -90,7 +90,7 @@ export default function RootLayout({
           fetchPriority="high"
         />
         <script type="application/ld+json">
-          {JSON.stringify(organizationJsonLd)}
+          {JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c")}
         </script>
       </head>
       <body

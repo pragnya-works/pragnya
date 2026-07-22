@@ -1,33 +1,36 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
+const CANONICAL_HOST = "www.pragnyaa.in";
+const ALLOWED_HOSTS = new Set(["pragnyaa.in", CANONICAL_HOST]);
+
 export function proxy(request: NextRequest) {
+  const host = request.headers.get("host") || "";
+  const hostname = host.split(":")[0].toLowerCase();
+
+  if (!ALLOWED_HOSTS.has(hostname)) {
+    return NextResponse.next();
+  }
+
+  const forwardedProto = request.headers.get("x-forwarded-proto") || "http";
   const url = request.nextUrl.clone();
-  const hostname = request.headers.get("host") || "";
-  const protocol = request.headers.get("x-forwarded-proto") || "https";
-  
-  // 1. Redirect HTTP to HTTPS
-  if (protocol === "http") {
+  url.hostname = CANONICAL_HOST;
+
+  if (forwardedProto === "http") {
     url.protocol = "https";
-    return NextResponse.redirect(url, { 
+    return NextResponse.redirect(url, {
       status: 301,
-      headers: {
-        "Cache-Control": "public, max-age=3600"
-      }
+      headers: { "Cache-Control": "public, max-age=3600" },
     });
   }
-  
-  // 2. Redirect non-www to www
+
   if (hostname === "pragnyaa.in") {
-    url.hostname = "www.pragnyaa.in";
-    return NextResponse.redirect(url, { 
+    return NextResponse.redirect(url, {
       status: 301,
-      headers: {
-        "Cache-Control": "public, max-age=3600"
-      }
+      headers: { "Cache-Control": "public, max-age=3600" },
     });
   }
-  
+
   return NextResponse.next();
 }
 

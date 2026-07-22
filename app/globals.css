@@ -2,7 +2,7 @@
 
 @theme {
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Newsreader", ui-serif, Georgia, serif;
+  --font-display: "Newsreader", ui-serif, georgia, serif;
 
   --color-paper: #f4f0e6;
   --color-paper-muted: #989180;

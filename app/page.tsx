@@ -80,7 +80,7 @@ export default function Home() {
 
   return (
     <>
-      <script type="application/ld+json">{JSON.stringify(webpageJsonLd)}</script>
+      <script type="application/ld+json">{JSON.stringify(webpageJsonLd).replace(/</g, "\\u003c")}</script>
       <Navbar />
       <main id="main-content">
         <Hero />
