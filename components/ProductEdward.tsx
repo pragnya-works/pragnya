@@ -6,15 +6,15 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 const features = [
   {
     icon: MessageSquare,
-    title: "Start with a prompt",
+    title: "Describe it in plain language",
     description:
-      "Describe the product in chat and Edward turns the brief into a working app.",
+      "Founders explain the product in chat and Edward turns the brief into a working app plan.",
   },
   {
     icon: Bot,
     title: "Agentic build runs",
     description:
-      "Edward plans, generates, and updates the app inside a sandbox instead of stopping at a one-shot draft.",
+      "Edward plans, generates, and refines the app inside a sandbox instead of stopping at a one-shot draft.",
   },
   {
     icon: GitBranch,
@@ -57,8 +57,8 @@ export function ProductEdward() {
               </div>
             </div>
             <p className="max-w-md text-sm leading-relaxed text-paper-muted md:text-base">
-              Edward is an AI web app builder. You describe the product in chat,
-              Edward plans and generates the app in a sandbox, and you review
+              Edward is an AI web app builder we built in-house. It plans,
+              generates, and previews apps in a sandbox so founders can review
               before syncing to GitHub.
             </p>
           </div>

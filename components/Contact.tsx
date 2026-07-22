@@ -4,6 +4,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 export function Contact() {
   return (
     <section
+      id="contact"
       className="border-t border-paper/5 px-6 py-24 md:px-12 md:py-32"
       aria-labelledby="contact-heading"
     >
@@ -19,11 +20,11 @@ export function Contact() {
             Let&apos;s build something resilient.
           </h2>
           <p className="mb-10 text-paper-muted md:text-lg">
-            Tell us what you are building. We will respond within two business
-            days.
+            Tell us what you are building and we will reply with a clear next
+            step within two business days.
           </p>
           <a
-            href="mailto:founder@pragnyaa.in"
+            href="mailto:founder@pragnyaa.in?subject=Project%20inquiry"
             className="inline-flex items-center gap-2 rounded-sm border border-accent/20 bg-accent/10 px-6 py-3 text-sm font-semibold text-accent transition hover:bg-accent/20"
           >
             <Mail className="h-4 w-4" aria-hidden="true" />

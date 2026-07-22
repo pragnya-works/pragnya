@@ -8,7 +8,7 @@ export function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 md:flex-row">
         <PragnyaLogo className="h-8 w-auto opacity-70" loading="lazy" />
         <p className="text-xs text-paper-muted">
-          &copy; {year} Pragnya Works. Built with Wisdom.
+          &copy; {year} Pragnya Works. Built from first principles.
         </p>
       </div>
     </footer>

@@ -2,14 +2,14 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 
 const values = [
   {
-    title: "Architectural Sovereignty",
+    title: "Architecture-first thinking",
     description:
-      "We do not just ship features; we engineer systems. By protecting architectural integrity early, every product stays easier to evolve, scale, and maintain.",
+      "We protect architectural integrity early, so every product stays easier to evolve, scale, and maintain as requirements change.",
   },
   {
-    title: "First-Principles Engineering",
+    title: "First-principles engineering",
     description:
-      "We return to first principles to remove accidental complexity at the design stage, building lean foundations for AI products, SaaS platforms, and long-lived web applications.",
+      "We strip away accidental complexity at the design stage, building lean foundations for AI products, SaaS platforms, and long-lived web applications.",
   },
 ] as const;
 
@@ -24,14 +24,13 @@ export function About() {
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
           <ScrollReveal>
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-              Our Philosophy
+              How we work
             </p>
             <h2
               id="about-heading"
               className="balanced-text font-display text-4xl font-medium leading-[1.15] tracking-tight text-paper md:text-5xl"
             >
-              Pragnya is not just about building software. It is about deeply
-              understanding the problem to build the right system.
+              We build the right system, not just the first system.
             </h2>
           </ScrollReveal>
 

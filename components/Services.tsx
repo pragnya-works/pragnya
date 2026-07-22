@@ -5,25 +5,25 @@ const services = [
     number: "01",
     title: "AI Product Development",
     description:
-      "We build agentic tools, AI workflows, and intelligent interfaces designed for production, not demos.",
+      "End-to-end AI systems, agentic workflows, and LLM integrations built for real users and real load — not prototypes.",
   },
   {
     number: "02",
     title: "Web Applications",
     description:
-      "High-performance Next.js and React applications with clean architecture, fast loading, and SEO built in.",
+      "Production-grade Next.js and React applications with clean architecture, fast performance, and SEO baked in from day one.",
   },
   {
     number: "03",
     title: "System Architecture",
     description:
-      "Resilient, scalable foundations that eliminate technical debt before it starts.",
+      "Resilient, scalable foundations that keep maintenance low and evolution easy as your product and traffic grow.",
   },
   {
     number: "04",
     title: "Technical Strategy",
     description:
-      "First-principles product engineering: architecture reviews, stack decisions, and build-or-buy guidance.",
+      "Architecture reviews, stack decisions, and build-or-buy guidance rooted in first principles so you avoid costly mistakes.",
   },
 ] as const;
 
@@ -38,13 +38,13 @@ export function Services() {
         <ScrollReveal>
           <div className="mb-16 md:mb-24">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-              What we do
+              Services
             </p>
             <h2
               id="services-heading"
               className="balanced-text max-w-3xl font-display text-4xl font-medium leading-[1.15] tracking-tight text-paper md:text-5xl lg:text-6xl"
             >
-              Engineering wisdom for products that last.
+              Engineering partnerships that ship.
             </h2>
           </div>
         </ScrollReveal>
