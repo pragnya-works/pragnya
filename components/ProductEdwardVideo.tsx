@@ -2,11 +2,116 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { Play } from "lucide-react";
+import { Lock, Shield } from "lucide-react";
 
 const VIDEO_ID = "zIBuOmr92_s";
 const POSTER_URL = `https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg`;
-const EMBED_URL = `https://www.youtube-nocookie.com/embed/${VIDEO_ID}?rel=0&modestbranding=1&playsinline=1&autoplay=1`;
+const EMBED_URL = `https://www.youtube-nocookie.com/embed/${VIDEO_ID}?rel=0&modestbranding=1&playsinline=1&autoplay=0`;
+
+function YouTubePlayIcon() {
+  return (
+    <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#ff0000] text-white shadow-xl transition-transform duration-200 ease-out group-hover:scale-110 sm:h-16 sm:w-16">
+      <svg
+        viewBox="0 0 24 24"
+        className="ml-0.5 h-6 w-6 fill-current sm:h-7 sm:w-7"
+        aria-hidden="true"
+      >
+        <path d="M8 5v14l11-7z" />
+      </svg>
+    </span>
+  );
+}
+
+function EmbeddedVideo({
+  shouldLoad,
+  onClick,
+}: {
+  shouldLoad: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <div className="group relative aspect-video w-full overflow-hidden rounded-sm bg-black">
+      {shouldLoad ? (
+        <iframe
+          src={EMBED_URL}
+          title="Edward product demo"
+          className="absolute inset-0 h-full w-full"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+          loading="lazy"
+        />
+      ) : (
+        <button
+          type="button"
+          onClick={onClick}
+          className="absolute inset-0 block w-full text-left"
+          aria-label="Play Edward demo video"
+        >
+          <Image
+            src={POSTER_URL}
+            alt="Edward demo video poster"
+            fill
+            className="object-cover opacity-80 transition-opacity duration-500 group-hover:opacity-100"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            unoptimized
+          />
+          <span className="absolute inset-0 flex items-center justify-center">
+            <YouTubePlayIcon />
+          </span>
+        </button>
+      )}
+    </div>
+  );
+}
+
+function BrowserChrome({
+  shouldLoad,
+  onClick,
+}: {
+  shouldLoad: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <div className="hidden overflow-hidden rounded-sm border border-paper/10 bg-surface-raised shadow-[0_24px_64px_rgba(0,0,0,0.42)] lg:block">
+      <div className="grid h-12 grid-cols-[5.5rem_1fr_5.5rem] items-center gap-3 border-b border-paper/5 px-4">
+        <div className="flex items-center gap-2">
+          <span className="h-3 w-3 rounded-full bg-[#ff5f57]" aria-hidden="true" />
+          <span className="h-3 w-3 rounded-full bg-[#febc2e]" aria-hidden="true" />
+          <span className="h-3 w-3 rounded-full bg-[#28c840]" aria-hidden="true" />
+        </div>
+
+        <div className="flex justify-center">
+          <div className="flex w-full max-w-md items-center justify-center gap-2 rounded-lg bg-paper/5 px-3 py-1.5 text-[11px] font-medium text-paper/70">
+            <Lock className="h-3 w-3 text-paper/40" aria-hidden="true" />
+            <span className="truncate">youtube.com/watch?v={VIDEO_ID}</span>
+          </div>
+        </div>
+
+        <div className="flex justify-end">
+          <Shield className="h-4 w-4 text-paper/30" aria-hidden="true" />
+        </div>
+      </div>
+
+      <div className="p-2">
+        <EmbeddedVideo shouldLoad={shouldLoad} onClick={onClick} />
+      </div>
+    </div>
+  );
+}
+
+function MobileVideo({
+  shouldLoad,
+  onClick,
+}: {
+  shouldLoad: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <div className="lg:hidden">
+      <EmbeddedVideo shouldLoad={shouldLoad} onClick={onClick} />
+    </div>
+  );
+}
 
 export function ProductEdwardVideo() {
   const [load, setLoad] = useState(false);
@@ -31,41 +136,9 @@ export function ProductEdwardVideo() {
   }, []);
 
   return (
-    <div
-      ref={ref}
-      className="group relative aspect-video w-full overflow-hidden rounded-sm border border-paper/5 bg-surface-raised"
-    >
-      {load ? (
-        <iframe
-          src={EMBED_URL}
-          title="Edward product demo"
-          className="absolute inset-0 h-full w-full"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-          loading="lazy"
-        />
-      ) : (
-        <>
-          <Image
-            src={POSTER_URL}
-            alt=""
-            fill
-            className="object-cover opacity-70 transition-opacity group-hover:opacity-90"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            unoptimized
-          />
-          <button
-            type="button"
-            onClick={() => setLoad(true)}
-            aria-label="Play Edward demo video"
-            className="absolute inset-0 flex items-center justify-center"
-          >
-            <span className="flex h-16 w-16 items-center justify-center rounded-full border border-paper/10 bg-ink/60 text-paper backdrop-blur-sm transition hover:scale-105 hover:border-accent/30 hover:text-accent">
-              <Play className="h-6 w-6 fill-current" aria-hidden="true" />
-            </span>
-          </button>
-        </>
-      )}
+    <div ref={ref}>
+      <BrowserChrome shouldLoad={load} onClick={() => setLoad(true)} />
+      <MobileVideo shouldLoad={load} onClick={() => setLoad(true)} />
     </div>
   );
 }

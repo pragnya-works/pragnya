@@ -12,7 +12,7 @@ type NavLink = {
 const links: readonly NavLink[] = [
   { href: "#about", label: "About" },
   { href: "#services", label: "Services" },
-  { href: "#product", label: "Products" },
+  { href: "#work", label: "Work" },
   { href: "https://github.com/pragnya-works", label: "GitHub", external: true },
 ];
 
@@ -35,9 +35,15 @@ export function MobileMenu() {
         )}
       </button>
 
-      {open && (
-        <div className="absolute inset-x-0 top-16 border-b border-paper/5 bg-ink/95 p-6 shadow-lg backdrop-blur-md">
-          <nav className="flex flex-col gap-4" aria-label="Mobile navigation">
+      <div
+        className={`absolute inset-x-0 top-16 border-b border-paper/5 bg-ink/80 p-6 shadow-lg backdrop-blur-md transition-all duration-300 ease-out ${
+          open
+            ? "pointer-events-auto opacity-100 translate-y-0"
+            : "pointer-events-none opacity-0 -translate-y-2"
+        }`}
+        aria-hidden={!open}
+      >
+        <nav className="flex flex-col gap-4" aria-label="Mobile navigation">
             {links.map((link) => (
               <a
                 key={link.href}
@@ -60,7 +66,6 @@ export function MobileMenu() {
             </a>
           </nav>
         </div>
-      )}
-    </div>
+      </div>
   );
 }

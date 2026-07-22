@@ -27,20 +27,20 @@ const features = [
 export function ProductEdward() {
   return (
     <section
-      id="product"
+      id="work"
       className="overflow-hidden border-t border-paper/5 px-6 py-24 md:px-12 md:py-32"
-      aria-labelledby="product-heading"
+      aria-labelledby="work-heading"
     >
       <div className="mx-auto max-w-6xl">
         <ScrollReveal>
           <div className="mb-16 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-                Our First Product
+                From our work
               </p>
               <div className="flex items-center gap-3">
                 <h2
-                  id="product-heading"
+                  id="work-heading"
                   className="font-display text-4xl font-medium tracking-tight text-paper md:text-5xl"
                 >
                   Meet Edward

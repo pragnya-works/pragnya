@@ -14,7 +14,7 @@ export function Hero() {
 
         <h1
           id="hero-heading"
-          className="balanced-text mb-8 font-display text-5xl font-medium leading-[1.05] tracking-tight text-paper md:text-7xl lg:text-8xl"
+          className="balanced-text mb-8 font-display text-4xl font-medium leading-[1.05] tracking-tight text-paper md:text-6xl lg:text-7xl"
         >
           Conscious intelligence,
           <br />
@@ -28,7 +28,7 @@ export function Hero() {
         </p>
 
         <a
-          href="#product"
+          href="#work"
           className="inline-flex items-center rounded-sm border border-paper/10 bg-paper/5 px-6 py-3 text-sm font-semibold text-paper transition hover:border-accent/30 hover:text-accent"
         >
           View our work

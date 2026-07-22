@@ -11,7 +11,7 @@ type NavLink = {
 const navLinks: readonly NavLink[] = [
   { href: "#about", label: "About" },
   { href: "#services", label: "Services" },
-  { href: "#product", label: "Products" },
+  { href: "#work", label: "Work" },
   { href: "https://github.com/pragnya-works", label: "GitHub", external: true },
 ];
 
