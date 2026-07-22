@@ -7,7 +7,7 @@ export const socialImageSize = {
   height: 630,
 } as const;
 
-export const socialImageAlt = "Pragnya social card with the centered Pragnya logo.";
+export const socialImageAlt = "Pragnya social card with the centered Pragnya logo and tagline.";
 
 export const socialImageContentType = "image/png";
 
@@ -23,26 +23,46 @@ const containerStyle: CSSProperties = {
   justifyContent: "center",
 };
 
+const innerStyle: CSSProperties = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: 28,
+  padding: "0 96px",
+};
+
 const wordmarkWrapperStyle: CSSProperties = {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
 };
 
-const geistRegularPromise = readFile(
-  join(
-    process.cwd(),
-    "node_modules/geist/dist/fonts/geist-sans/Geist-Regular.ttf",
-  ),
+const textStyle: CSSProperties = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  gap: 8,
+  maxWidth: 900,
+  color: "rgba(255,255,255,0.78)",
+  fontFamily: "\"Plus Jakarta Sans\", sans-serif",
+  fontSize: 28,
+  lineHeight: 1.45,
+  letterSpacing: "-0.01em",
+  textAlign: "center",
+};
+
+const plusJakartaSansPromise = readFile(
+  join(process.cwd(), "public/fonts/PlusJakartaSans-Regular.ttf"),
 );
 
 export async function getSocialImageFonts() {
-  const geistRegular = await geistRegularPromise;
+  const plusJakartaSans = await plusJakartaSansPromise;
 
   return [
     {
-      name: "Geist",
-      data: geistRegular,
+      name: "Plus Jakarta Sans",
+      data: plusJakartaSans,
       style: "normal" as const,
       weight: 400 as const,
     },
@@ -97,8 +117,14 @@ function PragnyaWordmark() {
 export function SocialImageCard() {
   return (
     <div style={containerStyle}>
-      <div style={wordmarkWrapperStyle}>
-        <PragnyaWordmark />
+      <div style={innerStyle}>
+        <div style={wordmarkWrapperStyle}>
+          <PragnyaWordmark />
+        </div>
+
+        <div style={textStyle}>
+          <div>AI product engineering for founders and teams.</div>
+        </div>
       </div>
     </div>
   );
