@@ -70,8 +70,8 @@ html {
     pointer-events: none;
     z-index: -1;
     background:
-      radial-gradient(circle at 80% 0%, rgba(201, 162, 39, 0.07), transparent 35%),
-      radial-gradient(circle at 20% 90%, rgba(244, 240, 230, 0.03), transparent 30%);
+      radial-gradient(circle at 80% 0%, color-mix(in srgb, var(--color-accent) 7%, transparent), transparent 35%),
+      radial-gradient(circle at 20% 90%, color-mix(in srgb, var(--color-paper) 3%, transparent), transparent 30%);
   }
 
   ::selection {
@@ -79,7 +79,7 @@ html {
   }
 
   *:focus-visible {
-    outline: 2px solid rgba(201, 162, 39, 0.5);
+    outline: 2px solid color-mix(in srgb, var(--color-accent) 50%, transparent);
     outline-offset: 2px;
   }
 

@@ -1,19 +1,7 @@
 import Link from "next/link";
 import { PragnyaLogo } from "@/components/PragnyaLogo";
 import { MobileMenu } from "@/components/MobileMenu";
-
-type NavLink = {
-  href: string;
-  label: string;
-  external?: boolean;
-};
-
-const navLinks: readonly NavLink[] = [
-  { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#work", label: "Work" },
-  { href: "https://github.com/pragnya-works", label: "GitHub", external: true },
-];
+import { navLinks } from "@/lib/navigation";
 
 export function Navbar() {
   return (

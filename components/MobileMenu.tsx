@@ -1,28 +1,20 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
-
-type NavLink = {
-  href: string;
-  label: string;
-  external?: boolean;
-};
-
-const links: readonly NavLink[] = [
-  { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#work", label: "Work" },
-  { href: "https://github.com/pragnya-works", label: "GitHub", external: true },
-];
+import { navLinks } from "@/lib/navigation";
 
 export function MobileMenu() {
   const [open, setOpen] = useState(false);
+  const panelId = useId();
   const buttonRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     if (!open) return;
+
+    const firstLink = panelRef.current?.querySelector("a");
+    firstLink?.focus();
 
     function handlePointerDown(event: PointerEvent) {
       const target = event.target as Node | null;
@@ -36,8 +28,24 @@ export function MobileMenu() {
       setOpen(false);
     }
 
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setOpen(false);
+      }
+    }
+
     document.addEventListener("pointerdown", handlePointerDown);
-    return () => document.removeEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) {
+      buttonRef.current?.focus();
+    }
   }, [open]);
 
   return (
@@ -48,6 +56,7 @@ export function MobileMenu() {
         onClick={() => setOpen(!open)}
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
+        aria-controls={panelId}
         className="flex size-9 items-center justify-center rounded-sm text-paper/70 transition hover:text-paper"
       >
         {open ? (
@@ -67,11 +76,12 @@ export function MobileMenu() {
         inert={!open}
       >
         <nav
+          id={panelId}
           ref={panelRef}
           className="flex w-full flex-col gap-4 border-b border-paper/5 bg-ink p-6 shadow-2xl"
           aria-label="Mobile navigation"
         >
-          {links.map((link) => (
+          {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}

@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { Lock, Shield } from "lucide-react";
 
 const VIDEO_ID = "zIBuOmr92_s";
 const POSTER_URL = `https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg`;
-const EMBED_URL = `https://www.youtube-nocookie.com/embed/${VIDEO_ID}?rel=0&modestbranding=1&playsinline=1&autoplay=0`;
+const EMBED_URL = `https://www.youtube-nocookie.com/embed/${VIDEO_ID}?rel=0&modestbranding=1&playsinline=1&autoplay=1`;
 
 function YouTubePlayIcon() {
   return (
@@ -115,28 +115,9 @@ function MobileVideo({
 
 export function ProductEdwardVideo() {
   const [load, setLoad] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const node = ref.current;
-    if (!node || !("IntersectionObserver" in window)) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setLoad(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "200px", threshold: 0.1 },
-    );
-
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
 
   return (
-    <div ref={ref}>
+    <div>
       <BrowserChrome shouldLoad={load} onClick={() => setLoad(true)} />
       <MobileVideo shouldLoad={load} onClick={() => setLoad(true)} />
     </div>
