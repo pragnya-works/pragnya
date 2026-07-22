@@ -71,7 +71,7 @@ function BrowserChrome({
   onClick: () => void;
 }) {
   return (
-    <div className="overflow-hidden rounded-sm border border-paper/10 bg-surface-raised shadow-[0_24px_64px_rgba(0,0,0,0.42)]">
+    <div className="overflow-hidden rounded-sm border border-paper/10 bg-surface-raised shadow-[0_24px_64px_rgba(0,0,0,0.42)] lg:rounded-md">
       <div className="hidden h-12 grid-cols-[5.5rem_1fr_5.5rem] items-center gap-3 border-b border-paper/5 px-4 lg:grid">
         <div className="flex items-center gap-2">
           <span className="size-3 rounded-full bg-[#ff5f57]" aria-hidden="true" />
