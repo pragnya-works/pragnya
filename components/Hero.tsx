@@ -16,8 +16,7 @@ export function Hero() {
           id="hero-heading"
           className="balanced-text mb-8 font-display text-4xl font-medium leading-[1.05] tracking-tight text-paper md:text-6xl lg:text-7xl"
         >
-          Build AI products and web apps
-          <br />
+          Build AI products and web apps{" "}
           <span className="text-gradient-accent">that ship and scale.</span>
         </h1>
 
