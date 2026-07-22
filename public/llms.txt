@@ -1,45 +1,25 @@
-# Pragnya - Conscious Intelligence, Exceptional Products
+# Pragnya
 
-> Wisdom-driven software agency
+> AI product development and software agency. We build production-grade web apps, AI systems, and resilient architecture for founders and teams.
 
 ## Overview
 
-Pragnya is a software agency dedicated to building exceptional products through conscious intelligence. We architect resilient systems that scale from first principles, applying deep technical intuition to eliminate technical debt at the design phase.
-
-## Philosophy
-
-- **Architectural Sovereignty**: We engineer systems, not just features. We maintain strict architectural integrity to ensure products evolve without inherited complexity.
-- **First-Principles Engineering**: We apply technical wisdom by returning to first principles, building lean, resilient foundations that outperform the status quo.
+Pragnya partners with founders and teams to design, build, and deploy production-grade AI systems, modern web applications, and resilient architecture — without the technical debt that slows you down.
 
 ## Products
 
-### Edward
+- [Edward](https://github.com/pragnya-works/edward): An agentic web app builder we built in-house. Founders describe a product in chat, Edward plans and generates the app in a sandbox, and the result can be previewed before syncing to GitHub.
+- [Edward demo](https://www.youtube.com/watch?v=zIBuOmr92_s): Video walkthrough of Edward building an app.
 
-Edward is our first product - an agentic web app builder. You describe the product in chat, Edward plans and generates the app in a sandbox, and you can preview the result before syncing it back to GitHub.
+## Links
 
-**Key Features:**
-- Start with a Prompt: Describe the product in chat and Edward turns the brief into a working app
-- Agentic Build Runs: Edward plans, generates, and updates the app inside a sandbox instead of stopping at a one-shot draft
-- Preview, Then Sync: Review the output, keep steering the run, and sync the final result back to GitHub when it is ready
-
-**Links:**
-- GitHub: https://github.com/pragnya-works/edward
-- Website: https://edward.pragnyaa.in
+- [Pragnya home](https://www.pragnyaa.in/): Landing page with services, work, and contact.
+- [Pragnya on GitHub](https://github.com/pragnya-works): Open-source work and repositories.
 
 ## Contact
 
-- Website: https://pragnyaa.in
-- GitHub: https://github.com/pragnya-works
-
-## Technologies
-
-We work with modern technologies including:
-- Next.js and React for web applications
-- TypeScript for type-safe development
-- Tailwind CSS for styling
-- Framer Motion for animations
-- System architecture and first-principles engineering
+- [founder@pragnyaa.in](mailto:founder@pragnyaa.in): General inquiries and project discussions.
 
 ## Keywords
 
-software agency, pragnya, edward, autonomous engineering, wisdom-driven development, first-principles engineering, system architecture, resilient systems, technical wisdom, conscious intelligence, software development, India
+software agency, AI product development, web app development, software engineering, Next.js, React, TypeScript, Tailwind CSS, system architecture, first-principles engineering, resilient systems
