@@ -83,10 +83,15 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        <link
+          rel="preload"
+          as="image"
+          href="/pragnya-mark-sm.png"
+          fetchPriority="high"
         />
+        <script type="application/ld+json">
+          {JSON.stringify(organizationJsonLd)}
+        </script>
       </head>
       <body
         className={`${plusJakartaSans.variable} ${newsreader.variable} antialiased`}

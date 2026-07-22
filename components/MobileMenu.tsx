@@ -48,12 +48,12 @@ export function MobileMenu() {
         onClick={() => setOpen(!open)}
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
-        className="flex h-9 w-9 items-center justify-center rounded-sm text-paper/70 transition hover:text-paper"
+        className="flex size-9 items-center justify-center rounded-sm text-paper/70 transition hover:text-paper"
       >
         {open ? (
-          <X className="h-5 w-5" aria-hidden="true" />
+          <X className="size-5" aria-hidden="true" />
         ) : (
-          <Menu className="h-5 w-5" aria-hidden="true" />
+          <Menu className="size-5" aria-hidden="true" />
         )}
       </button>
 
@@ -64,6 +64,7 @@ export function MobileMenu() {
             : "pointer-events-none opacity-0 -translate-y-2"
         }`}
         aria-hidden={!open}
+        inert={!open}
       >
         <nav
           ref={panelRef}

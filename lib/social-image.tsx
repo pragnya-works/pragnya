@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { siteConfig } from "@/lib/site";
+import type { CSSProperties } from "react";
 
 export const socialImageSize = {
   width: 1200,
@@ -11,6 +12,52 @@ export const socialImageAlt =
   "Pragnya social card with the centered Pragnya logo and a minimal description underneath.";
 
 export const socialImageContentType = "image/png";
+
+const containerStyle: CSSProperties = {
+  width: "100%",
+  height: "100%",
+  display: "flex",
+  overflow: "hidden",
+  background:
+    "radial-gradient(circle at 18% 12%, rgba(212,175,55,0.08), transparent 24%), linear-gradient(180deg, #111111 0%, #050505 100%)",
+  color: "#FFFFFF",
+  alignItems: "center",
+  justifyContent: "center",
+};
+
+const innerStyle: CSSProperties = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: 24,
+  width: "100%",
+  padding: "72px 84px",
+};
+
+const wordmarkWrapperStyle: CSSProperties = {
+  display: "flex",
+  width: 520,
+  justifyContent: "center",
+};
+
+const textStyle: CSSProperties = {
+  maxWidth: 900,
+  color: "rgba(255,255,255,0.76)",
+  fontFamily: "Geist",
+  fontSize: 27,
+  lineHeight: 1.38,
+  letterSpacing: "-0.02em",
+  textAlign: "center",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  gap: 2,
+};
+
+const lineStyle: CSSProperties = {
+  display: "flex",
+};
 
 const geistRegularPromise = readFile(
   join(
@@ -81,62 +128,15 @@ export function SocialImageCard() {
   const supportingLines = siteConfig.socialImageDescriptionLines;
 
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "100%",
-        display: "flex",
-        overflow: "hidden",
-        background:
-          "radial-gradient(circle at 18% 12%, rgba(212,175,55,0.08), transparent 24%), linear-gradient(180deg, #111111 0%, #050505 100%)",
-        color: "#FFFFFF",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: 24,
-          width: "100%",
-          padding: "72px 84px",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            width: 520,
-            justifyContent: "center",
-          }}
-        >
+    <div style={containerStyle}>
+      <div style={innerStyle}>
+        <div style={wordmarkWrapperStyle}>
           <PragnyaWordmark />
         </div>
 
-        <div
-          style={{
-            maxWidth: 900,
-            color: "rgba(255,255,255,0.76)",
-            fontFamily: "Geist",
-            fontSize: 27,
-            lineHeight: 1.38,
-            letterSpacing: "-0.02em",
-            textAlign: "center",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: 2,
-          }}
-        >
+        <div style={textStyle}>
           {supportingLines.map((line) => (
-            <div
-              key={line}
-              style={{
-                display: "flex",
-              }}
-            >
+            <div key={line} style={lineStyle}>
               {line}
             </div>
           ))}

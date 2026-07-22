@@ -8,8 +8,9 @@ export function Hero() {
     >
       <div className="mx-auto max-w-5xl motion-safe:animate-fade-up">
         <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.15em] text-accent">
-          <CircuitBoard className="h-3 w-3" aria-hidden="true" />
-          <span>AI Product Development &amp; Software Agency</span>
+          <CircuitBoard className="size-3" aria-hidden="true" />
+          <span className="sm:hidden">AI Product Agency</span>
+          <span className="hidden sm:inline">AI Product Development &amp; Software Agency</span>
         </div>
 
         <h1

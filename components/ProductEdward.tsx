@@ -52,7 +52,7 @@ export function ProductEdward() {
                   aria-label="Open Edward GitHub repository"
                   className="text-paper/60 transition hover:text-accent"
                 >
-                  <GitHub className="h-6 w-6" aria-hidden="true" />
+                  <GitHub className="size-6" aria-hidden="true" />
                 </a>
               </div>
             </div>
@@ -80,7 +80,7 @@ export function ProductEdward() {
                 style={{ transitionDelay: `${index * 80}ms` }}
               >
                 <Icon
-                  className="mt-1 h-5 w-5 shrink-0 text-accent"
+                  className="mt-1 size-5 shrink-0 text-accent"
                   aria-hidden="true"
                 />
                 <div>

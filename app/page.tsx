@@ -80,10 +80,7 @@ export default function Home() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageJsonLd) }}
-      />
+      <script type="application/ld+json">{JSON.stringify(webpageJsonLd)}</script>
       <Navbar />
       <main id="main-content">
         <Hero />

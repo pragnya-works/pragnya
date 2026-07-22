@@ -15,33 +15,33 @@ export default function Error({
   }, [error]);
 
   return (
-    <main className="min-h-screen flex items-center justify-center px-6">
-      <div className="max-w-2xl mx-auto text-center">
-        <div className="w-16 h-16 mx-auto mb-8 bg-red-500/10 rounded-full flex items-center justify-center">
-          <span className="font-display text-3xl font-bold text-red-500">
+    <main className="flex min-h-screen items-center justify-center bg-ink px-6">
+      <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto mb-8 flex size-16 items-center justify-center rounded-sm bg-red-500/10">
+          <span className="font-display text-3xl font-medium text-red-500">
             !
           </span>
         </div>
-        
-        <h1 className="font-display text-4xl md:text-5xl font-bold mb-4 text-white tracking-tight">
+
+        <h1 className="mb-4 font-display text-4xl font-medium tracking-tight text-paper md:text-5xl">
           Something Went Wrong
         </h1>
-        
-        <p className="text-white/50 text-lg mb-8 leading-relaxed">
+
+        <p className="mb-8 text-lg leading-relaxed text-paper/50">
           An unexpected error occurred. Please try again.
         </p>
-        
-        <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+
+        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <button
             onClick={reset}
-            className="px-6 py-3 rounded-full bg-accent-gold text-black font-bold text-sm uppercase tracking-wider hover:brightness-110 transition-all focus:outline-none focus:ring-2 focus:ring-accent-gold/50"
+            className="inline-flex items-center rounded-sm bg-accent px-6 py-3 text-sm font-semibold text-ink transition hover:bg-accent/90"
           >
             Try Again
           </button>
-          
+
           <Link
             href="/"
-            className="px-6 py-3 rounded-full border border-white/10 bg-white/[0.03] text-white/80 font-bold text-sm uppercase tracking-wider hover:bg-white/[0.08] transition-all focus:outline-none focus:ring-2 focus:ring-white/20"
+            className="inline-flex items-center rounded-sm border border-paper/10 bg-paper/5 px-6 py-3 text-sm font-semibold text-paper transition hover:border-accent/30 hover:text-accent"
           >
             Go Home
           </Link>

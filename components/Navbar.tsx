@@ -18,7 +18,7 @@ const navLinks: readonly NavLink[] = [
 export function Navbar() {
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 h-16 border-b border-paper/5 bg-ink/80 backdrop-blur-md"
+      className="fixed top-0 left-0 right-0 z-50 h-16 border-b border-paper/5 bg-ink/95 md:bg-ink/80 md:backdrop-blur-md"
       aria-label="Main navigation"
     >
       <div className="mx-auto flex h-full max-w-6xl items-center justify-between px-6 md:px-12">
