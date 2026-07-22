@@ -1,6 +1,5 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
-import { siteConfig } from "@/lib/site";
 import type { CSSProperties } from "react";
 
 export const socialImageSize = {
@@ -8,8 +7,7 @@ export const socialImageSize = {
   height: 630,
 } as const;
 
-export const socialImageAlt =
-  "Pragnya social card with the centered Pragnya logo and a minimal description underneath.";
+export const socialImageAlt = "Pragnya social card with the centered Pragnya logo.";
 
 export const socialImageContentType = "image/png";
 
@@ -25,38 +23,10 @@ const containerStyle: CSSProperties = {
   justifyContent: "center",
 };
 
-const innerStyle: CSSProperties = {
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "center",
-  gap: 24,
-  width: "100%",
-  padding: "72px 84px",
-};
-
 const wordmarkWrapperStyle: CSSProperties = {
   display: "flex",
-  width: 520,
-  justifyContent: "center",
-};
-
-const textStyle: CSSProperties = {
-  maxWidth: 900,
-  color: "rgba(255,255,255,0.76)",
-  fontFamily: "Geist",
-  fontSize: 27,
-  lineHeight: 1.38,
-  letterSpacing: "-0.02em",
-  textAlign: "center",
-  display: "flex",
-  flexDirection: "column",
   alignItems: "center",
-  gap: 2,
-};
-
-const lineStyle: CSSProperties = {
-  display: "flex",
+  justifyContent: "center",
 };
 
 const geistRegularPromise = readFile(
@@ -125,22 +95,10 @@ function PragnyaWordmark() {
 }
 
 export function SocialImageCard() {
-  const supportingLines = siteConfig.socialImageDescriptionLines;
-
   return (
     <div style={containerStyle}>
-      <div style={innerStyle}>
-        <div style={wordmarkWrapperStyle}>
-          <PragnyaWordmark />
-        </div>
-
-        <div style={textStyle}>
-          {supportingLines.map((line) => (
-            <div key={line} style={lineStyle}>
-              {line}
-            </div>
-          ))}
-        </div>
+      <div style={wordmarkWrapperStyle}>
+        <PragnyaWordmark />
       </div>
     </div>
   );
