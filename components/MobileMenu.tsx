@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 type NavLink = {
@@ -18,10 +18,32 @@ const links: readonly NavLink[] = [
 
 export function MobileMenu() {
   const [open, setOpen] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+
+    function handlePointerDown(event: PointerEvent) {
+      const target = event.target as Node | null;
+      if (!target) return;
+      if (
+        panelRef.current?.contains(target) ||
+        buttonRef.current?.contains(target)
+      ) {
+        return;
+      }
+      setOpen(false);
+    }
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    return () => document.removeEventListener("pointerdown", handlePointerDown);
+  }, [open]);
 
   return (
     <div className="md:hidden">
       <button
+        ref={buttonRef}
         type="button"
         onClick={() => setOpen(!open)}
         aria-label={open ? "Close menu" : "Open menu"}
@@ -42,12 +64,11 @@ export function MobileMenu() {
             : "pointer-events-none opacity-0 -translate-y-2"
         }`}
         aria-hidden={!open}
-        onClick={() => setOpen(false)}
       >
         <nav
+          ref={panelRef}
           className="flex w-full flex-col gap-4 border-b border-paper/5 bg-ink p-6 shadow-2xl"
           aria-label="Mobile navigation"
-          onClick={(e) => e.stopPropagation()}
         >
           {links.map((link) => (
             <a
@@ -71,6 +92,6 @@ export function MobileMenu() {
           </a>
         </nav>
       </div>
-      </div>
+    </div>
   );
 }
