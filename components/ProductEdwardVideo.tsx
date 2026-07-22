@@ -38,7 +38,6 @@ function EmbeddedVideo({
           className="absolute inset-0 size-full"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
-          loading="lazy"
         />
       ) : (
         <button
