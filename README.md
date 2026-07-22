@@ -2,7 +2,7 @@
 
 > **Conscious Intelligence, Exceptional Products**
 
-[![Pragnya - AI product engineering for founders and teams](https://www.pragnyaa.in/pragnya-og.png)](https://www.pragnyaa.in)
+[![Pragnya - AI product engineering for founders and teams](public/pragnya-og.png)](https://www.pragnyaa.in)
 
 Pragnya is a wisdom-driven software agency that builds exceptional products through conscious intelligence. We architect resilient systems that scale from first principles, eliminating technical debt at the design phase.
 
