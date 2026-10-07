@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { PragnyaLogo } from "@/components/PragnyaLogo";
 import { contactHref } from "@/lib/navigation";
-import { founder, siteConfig } from "@/lib/site";
+import { siteConfig } from "@/lib/site";
 
 const linkClass = "transition hover:text-accent";
 
@@ -53,7 +53,7 @@ export function Footer() {
             </ul>
           </nav>
           <p>
-            &copy; {year} {siteConfig.name}. Founded by {founder.name}.
+            &copy; {year} {siteConfig.name}.
           </p>
         </div>
       </div>
