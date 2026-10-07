@@ -13,12 +13,12 @@ const values = [
   },
 ] as const;
 
-export function About() {
+export function Approach() {
   return (
     <section
-      id="about"
+      id="approach"
       className="border-t border-paper/5 bg-surface px-6 py-24 md:px-12 md:py-32"
-      aria-labelledby="about-heading"
+      aria-labelledby="approach-heading"
     >
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
@@ -27,7 +27,7 @@ export function About() {
               How we work
             </p>
             <h2
-              id="about-heading"
+              id="approach-heading"
               className="balanced-text font-display text-4xl font-medium leading-[1.15] tracking-tight text-paper md:text-5xl"
             >
               We build the right system, not just the first system.

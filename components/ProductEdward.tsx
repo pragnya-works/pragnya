@@ -2,6 +2,8 @@ import { MessageSquare, Bot, GitBranch } from "lucide-react";
 import { GitHub } from "@/components/GitHubIcon";
 import { ProductEdwardVideo } from "@/components/ProductEdwardVideo";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { TextLink } from "@/components/TextLink";
+import { edward } from "@/lib/site";
 
 const features = [
   {
@@ -33,10 +35,10 @@ export function ProductEdward() {
     >
       <div className="mx-auto max-w-6xl">
         <ScrollReveal>
-          <div className="mb-16 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div className="mb-16 flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
             <div>
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-                From our work
+                Our product
               </p>
               <div className="flex items-center gap-3">
                 <h2
@@ -46,7 +48,7 @@ export function ProductEdward() {
                   Meet Edward
                 </h2>
                 <a
-                  href="https://github.com/pragnya-works/edward"
+                  href={edward.repoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Open Edward GitHub repository"
@@ -56,17 +58,38 @@ export function ProductEdward() {
                 </a>
               </div>
             </div>
-            <p className="max-w-md text-sm leading-relaxed text-paper-muted md:text-base">
-              Edward is an AI web app builder we built in-house. It plans,
-              generates, and previews apps in a sandbox so founders can review
-              before syncing to GitHub.
-            </p>
+            <div className="max-w-xl space-y-4 text-sm leading-relaxed text-paper-muted md:text-base">
+              <p>{edward.description}</p>
+              <p>{edward.modelSupport}</p>
+              <div className="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-sm font-semibold text-accent">
+                <a
+                  href={edward.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition hover:text-accent-light"
+                >
+                  Visit Edward &rarr;
+                </a>
+                <a
+                  href={edward.repoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition hover:text-accent-light"
+                >
+                  View source &rarr;
+                </a>
+              </div>
+            </div>
           </div>
         </ScrollReveal>
 
         <ScrollReveal>
           <div className="mb-16">
             <ProductEdwardVideo />
+            <p className="mt-4 text-center text-sm text-paper-muted">
+              Product demo of Edward. Try it at{" "}
+              <TextLink href={edward.url}>edwardd.app</TextLink>.
+            </p>
           </div>
         </ScrollReveal>
 

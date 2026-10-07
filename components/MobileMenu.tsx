@@ -2,7 +2,7 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { navLinks } from "@/lib/navigation";
+import { contactHref, navLinks } from "@/lib/navigation";
 
 export function MobileMenu() {
   const [open, setOpen] = useState(false);
@@ -95,7 +95,7 @@ export function MobileMenu() {
             </a>
           ))}
           <a
-            href="mailto:founder@pragnyaa.in"
+            href={contactHref}
             onClick={() => setOpen(false)}
             className="mt-2 inline-flex w-fit items-center justify-center rounded-sm border border-paper/10 bg-paper/5 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-paper transition hover:border-accent/30 hover:text-accent"
           >

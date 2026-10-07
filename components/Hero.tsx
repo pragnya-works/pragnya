@@ -1,4 +1,7 @@
 import { CircuitBoard } from "lucide-react";
+import { ButtonLink } from "@/components/ButtonLink";
+import { TextLink } from "@/components/TextLink";
+import { founder, siteConfig } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -9,8 +12,10 @@ export function Hero() {
       <div className="mx-auto max-w-5xl motion-safe:animate-fade-up">
         <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.15em] text-accent">
           <CircuitBoard className="size-3" aria-hidden="true" />
-          <span className="sm:hidden">AI Product Agency</span>
-          <span className="hidden sm:inline">AI Product Development &amp; Software Agency</span>
+          <span className="sm:hidden">AI Product &amp; Engineering</span>
+          <span className="hidden sm:inline">
+            AI Product &amp; Engineering Company
+          </span>
         </div>
 
         <h1
@@ -21,25 +26,22 @@ export function Hero() {
           <span className="text-gradient-accent">that ship and scale.</span>
         </h1>
 
-        <p className="balanced-text mb-10 max-w-2xl text-lg leading-relaxed text-paper-muted md:text-xl">
-          Pragnya partners with founders and teams to design, build, and deploy
-          production-grade AI systems, modern web applications, and resilient
-          architecture — without the technical debt that slows you down.
+        <p className="balanced-text mb-6 max-w-2xl text-lg leading-relaxed text-paper-muted md:text-xl">
+          Pragnya Works builds and operates AI products while partnering with
+          founders and teams on production-grade software, AI systems, and
+          resilient infrastructure.
+        </p>
+
+        <p className="mb-10 max-w-2xl text-sm leading-relaxed text-paper-muted md:text-base">
+          {`${siteConfig.name} is an independent software company founded in ${siteConfig.foundedYear} by `}
+          <TextLink href={founder.linkedinUrl}>{founder.name}</TextLink>.
         </p>
 
         <div className="flex flex-col gap-4 sm:flex-row">
-          <a
-            href="#contact"
-            className="inline-flex items-center justify-center rounded-sm border border-accent/20 bg-accent/10 px-6 py-3 text-sm font-semibold text-accent transition hover:bg-accent/20"
-          >
+          <ButtonLink href="#work">Meet Edward</ButtonLink>
+          <ButtonLink href="#contact" variant="secondary">
             Start a project
-          </a>
-          <a
-            href="#work"
-            className="inline-flex items-center justify-center rounded-sm border border-paper/10 bg-paper/5 px-6 py-3 text-sm font-semibold text-paper transition hover:border-accent/30 hover:text-accent"
-          >
-            See our work
-          </a>
+          </ButtonLink>
         </div>
       </div>
     </section>

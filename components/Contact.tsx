@@ -1,5 +1,7 @@
 import { Mail } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { contactHref } from "@/lib/navigation";
+import { siteConfig } from "@/lib/site";
 
 export function Contact() {
   return (
@@ -24,11 +26,11 @@ export function Contact() {
             step within two business days.
           </p>
           <a
-            href="mailto:founder@pragnyaa.in?subject=Project%20inquiry"
+            href={`${contactHref}?subject=Project%20inquiry`}
             className="inline-flex items-center gap-2 rounded-sm border border-accent/20 bg-accent/10 px-6 py-3 text-sm font-semibold text-accent transition hover:bg-accent/20"
           >
             <Mail className="size-4" aria-hidden="true" />
-            founder@pragnyaa.in
+            {siteConfig.email}
           </a>
         </ScrollReveal>
       </div>

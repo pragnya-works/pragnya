@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, Newsreader } from "next/font/google";
-import { organizationJsonLd, siteConfig } from "@/lib/site";
+import { JsonLd } from "@/components/JsonLd";
+import { founder, siteConfig, socialImage } from "@/lib/site";
+import { siteGraph } from "@/lib/structured-data";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -34,9 +36,9 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   applicationName: siteConfig.name,
   keywords: [...siteConfig.keywords],
-  authors: [{ name: siteConfig.legalName, url: siteConfig.url }],
-  creator: siteConfig.legalName,
-  publisher: siteConfig.legalName,
+  authors: [{ name: founder.name, url: founder.websiteUrl }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
   formatDetection: {
     telephone: false,
     address: false,
@@ -54,22 +56,15 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteConfig.url,
-    title: siteConfig.socialTitle,
-    description: siteConfig.socialDescription,
+    title: siteConfig.title,
+    description: siteConfig.description,
     siteName: siteConfig.name,
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: "Pragnya website preview",
-      },
-    ],
+    images: [socialImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.socialTitle,
-    description: siteConfig.socialDescription,
+    title: siteConfig.title,
+    description: siteConfig.description,
     images: [siteConfig.ogImage],
   },
   category: "technology",
@@ -89,9 +84,7 @@ export default function RootLayout({
           href="/pragnya-mark-sm.png"
           fetchPriority="high"
         />
-        <script type="application/ld+json">
-          {JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c")}
-        </script>
+        <JsonLd graph={siteGraph} />
       </head>
       <body
         className={`${plusJakartaSans.variable} ${newsreader.variable} antialiased`}

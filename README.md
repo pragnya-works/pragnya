@@ -1,85 +1,62 @@
-# Pragnya
+# Pragnya Works
 
-> **Conscious Intelligence, Exceptional Products**
+> Conscious Intelligence, Exceptional Products
 
-[![Pragnya - AI product engineering for founders and teams](public/pragnya-og.png)](https://www.pragnyaa.in)
+[![Pragnya Works - AI products and software engineering](public/pragnya-og.png)](https://www.pragnyaa.in)
 
-Pragnya is a wisdom-driven software agency that builds exceptional products through conscious intelligence. We architect resilient systems that scale from first principles, eliminating technical debt at the design phase.
+## Identity
 
-## 🎯 Our Philosophy
+| | |
+|---|---|
+| Company | Pragnya Works |
+| Website | https://www.pragnyaa.in |
+| Founder | [Shubhojeet Bera](https://www.linkedin.com/in/shubhobera) |
+| Founded | 2026 |
+| Contact | shubhojeet@pragnyaa.in |
+| GitHub | https://github.com/pragnya-works |
 
-### Architectural Sovereignty
-We don't just ship features—we engineer systems. By maintaining strict architectural integrity, we ensure that every product we build is capable of evolving without the weight of inherited complexity.
+Pragnya Works is an independent software company. It builds and operates its own AI products, and works with founders and teams on production-grade software, AI systems, and infrastructure.
 
-### First-Principles Engineering
-Pragnya is the application of deep technical intuition. We return to first principles to eliminate technical debt at the design phase, building lean, resilient foundations that outperform the status quo.
+## Edward
 
-## 🚀 What We Do
+Edward is an AI software development platform built and operated by Pragnya Works. It turns natural-language product requirements into runnable web applications through planning, multi-file code generation and editing, sandboxed execution, debugging, live previews, and GitHub sync. It launched publicly in January 2026.
 
-We specialize in:
+Edward supports Anthropic Claude, OpenAI, and Gemini. Users connect a provider with their own API key.
 
-- **System Architecture**: Building scalable, resilient systems from the ground up
-- **Technical Wisdom**: Applying deep engineering knowledge to solve complex problems
-- **Product Development**: Creating high-impact products that users love
-- **Engineering Excellence**: Maintaining the highest standards in code quality and design
+- Website: https://edwardd.app
+- Source: https://github.com/pragnya-works/Edward
+- Product page: https://www.pragnyaa.in/edward
 
-## 💡 Our First Product: Edward
+## Client work
 
-**Edward** is an agentic web app builder. You describe the product in chat, Edward plans and generates the app in a sandbox, and you can preview the result before syncing it back to GitHub.
+We take on engineering projects for founders and teams:
 
-### Key Features:
-- 🧠 **Start with a Prompt**: Describe the product in chat and Edward turns the brief into a working app
-- ⚡ **Agentic Build Runs**: Edward plans, generates, and updates the app inside a sandbox instead of stopping at a one-shot draft
-- 🛡️ **Preview, Then Sync**: Review the output, keep steering the run, and sync the final result back to GitHub when it is ready
+- AI product development: agentic workflows and LLM integrations
+- Web applications: Next.js and React
+- System architecture and technical strategy
 
-**Links:**
-- GitHub: [github.com/pragnya-works/edward](https://github.com/pragnya-works/edward)
-- Website: [edwardd.app](https://edwardd.app)
+To start a conversation, email shubhojeet@pragnyaa.in.
 
-## 📧 Get in Touch
+## How we work
 
-Interested in working with us? Reach out:
+We protect architecture early so a product stays easy to change as requirements shift, and we return to first principles to cut accidental complexity at the design stage.
 
-- **Email**: [founder@pragnyaa.in](mailto:founder@pragnyaa.in)
-- **Website**: [pragnyaa.in](https://pragnyaa.in)
-- **GitHub**: [github.com/pragnya-works](https://github.com/pragnya-works)
+## This repository
 
-## 🌟 Why Pragnya?
+This repository is the source for [www.pragnyaa.in](https://www.pragnyaa.in). It is a Next.js 16 app (App Router) using React 19, TypeScript, and Tailwind CSS 4.
 
-> "Pragnya is not just about building software; it's about **understanding** the problem."
+```bash
+pnpm install
+pnpm dev     # http://localhost:3000
+pnpm lint
+pnpm build
+```
 
-We believe in:
-- Deep technical understanding over quick fixes
-- Sustainable architecture over rapid prototyping
-- Long-term value over short-term gains
-- Engineering wisdom over following trends
+Where things live:
 
-## 📚 Technologies We Excel In
-
-- Modern web frameworks (Next.js, React)
-- System architecture and design patterns
-- Performance optimization
-- Security best practices
-- TypeScript and type-safe development
-- Cloud infrastructure and DevOps
-
----
-
-**Built with Wisdom** 🧘‍♂️
-- Robots.txt with crawler instructions
-- llms.txt for AI/LLM context
-
-## Performance
-
-Built with performance in mind:
-
-- Server-side rendering (SSR)
-- Optimized fonts with `next/font`
-- Image optimization ready
-- Code splitting
-- Security headers (HSTS, CSP, etc.)
-- Compression enabled
-
-## License
-
-Built with Wisdom by Pragnya Works.
+- `lib/site.ts` holds the company, founder, and Edward facts used across the site. Change them there.
+- `lib/structured-data.ts` builds the Schema.org JSON-LD graph (Organization, Person, WebSite, SoftwareApplication).
+- `app/` has the pages (`/`, `/about`, `/edward`), `sitemap.ts`, and `robots.ts`.
+- `public/llms.txt` is the plain-text summary for LLM crawlers.
+- `proxy.ts` redirects `pragnyaa.in` and plain HTTP to `https://www.pragnyaa.in`.
+- `next.config.ts` sets the security headers (HSTS, `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`).

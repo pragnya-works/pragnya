@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { PragnyaLogo } from "@/components/PragnyaLogo";
 import { MobileMenu } from "@/components/MobileMenu";
-import { navLinks } from "@/lib/navigation";
+import { contactHref, navLinks } from "@/lib/navigation";
 
 export function Navbar() {
   return (
@@ -12,7 +12,7 @@ export function Navbar() {
       <div className="mx-auto flex h-full max-w-6xl items-center justify-between px-6 md:px-12">
         <Link
           href="/"
-          aria-label="Pragnya home"
+          aria-label="Pragnya Works home"
           className="flex items-center"
         >
           <PragnyaLogo className="h-7 w-auto sm:h-8" priority />
@@ -32,7 +32,7 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="mailto:founder@pragnyaa.in"
+            href={contactHref}
             className="rounded-sm border border-paper/10 bg-paper/5 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-paper transition hover:border-accent/30 hover:text-accent"
           >
             Get in touch

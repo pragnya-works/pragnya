@@ -1,3 +1,5 @@
+import { siteConfig } from "@/lib/site";
+
 export type NavLink = {
   href: string;
   label: string;
@@ -5,8 +7,10 @@ export type NavLink = {
 };
 
 export const navLinks: readonly NavLink[] = [
-  { href: "#services", label: "Services" },
-  { href: "#about", label: "About" },
-  { href: "#work", label: "Work" },
-  { href: "https://github.com/pragnya-works", label: "GitHub", external: true },
+  { href: "/about", label: "About" },
+  { href: "/edward", label: "Edward" },
+  { href: "/#services", label: "Services" },
+  { href: siteConfig.githubUrl, label: "GitHub", external: true },
 ] as const;
+
+export const contactHref = `mailto:${siteConfig.email}`;

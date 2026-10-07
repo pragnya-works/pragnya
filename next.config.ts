@@ -21,16 +21,6 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  async redirects() {
-    return [
-      {
-        source: "/edward",
-        destination: "https://github.com/pragnya-works/Edward",
-        permanent: true,
-      },
-    ];
-  },
-
   async headers() {
     return [
       {

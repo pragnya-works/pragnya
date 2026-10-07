@@ -2,18 +2,20 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
-import { About } from "@/components/About";
+import { Approach } from "@/components/Approach";
 import { ProductEdward } from "@/components/ProductEdward";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
-import { schemaIds, siteConfig } from "@/lib/site";
+import { JsonLd } from "@/components/JsonLd";
+import { buildPageMetadata, siteConfig } from "@/lib/site";
+import { buildPageJsonLd, ref, schemaIds } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
-  title: {
-    absolute: siteConfig.homeTitle,
-  },
-  description: siteConfig.description,
+  ...buildPageMetadata({
+    title: siteConfig.title,
+    description: siteConfig.description,
+    path: "/",
+  }),
   robots: {
     index: true,
     follow: true,
@@ -25,68 +27,55 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: {
-    canonical: "/",
-  },
 };
 
-export default function Home() {
-  const webpageJsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        "@id": schemaIds.webpage,
-        name: siteConfig.homeTitle,
-        url: siteConfig.url,
-        description: siteConfig.description,
-        inLanguage: "en",
-        isPartOf: {
-          "@id": schemaIds.website,
-        },
-        about: {
-          "@id": schemaIds.organization,
-        },
-        primaryImageOfPage: {
-          "@type": "ImageObject",
-          url: `${siteConfig.url}${siteConfig.ogImage}`,
-        },
-        mainEntity: {
-          "@id": schemaIds.service,
-        },
-      },
-      {
-        "@type": "ProfessionalService",
-        "@id": schemaIds.service,
-        name: "AI Product Development and Software Engineering",
-        url: siteConfig.url,
-        description: siteConfig.description,
-        provider: {
-          "@id": schemaIds.organization,
-        },
-        serviceType: [
-          "AI product development",
-          "Web application development",
-          "Software architecture",
-          "Resilient software systems",
-        ],
-        audience: {
-          "@type": "Audience",
-          audienceType: "Founders and teams",
-        },
-      },
+const pageGraph = [
+  {
+    ...buildPageJsonLd({
+      id: schemaIds.homePage,
+      type: "WebPage",
+      name: siteConfig.title,
+      description: siteConfig.description,
+      path: "/",
+      about: schemaIds.organization,
+    }),
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: `${siteConfig.url}${siteConfig.ogImage}`,
+    },
+    mainEntity: ref(schemaIds.service),
+  },
+  {
+    "@type": "ProfessionalService",
+    "@id": schemaIds.service,
+    name: "AI Product Development and Software Engineering",
+    url: siteConfig.url,
+    description:
+      "Client engineering work for founders and teams: AI systems, web applications, and software architecture.",
+    provider: ref(schemaIds.organization),
+    serviceType: [
+      "AI product development",
+      "Web application development",
+      "Software architecture",
+      "Resilient software systems",
     ],
-  };
+    audience: {
+      "@type": "Audience",
+      audienceType: "Founders and teams",
+    },
+  },
+];
 
+export default function Home() {
   return (
     <>
-      <script type="application/ld+json">{JSON.stringify(webpageJsonLd).replace(/</g, "\\u003c")}</script>
+      <JsonLd graph={pageGraph} />
       <Navbar />
       <main id="main-content">
         <Hero />
-        <Services />
-        <About />
         <ProductEdward />
+        <Services />
+        <Approach />
         <Contact />
       </main>
       <Footer />

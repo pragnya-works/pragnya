@@ -1,25 +1,30 @@
-# Pragnya
+# Pragnya Works
 
-> AI product development and software agency. We build production-grade web apps, AI systems, and resilient architecture for founders and teams.
+> Pragnya Works is an independent software company founded in 2026 by Shubhojeet Bera. It builds and operates AI products, including Edward, and works with founders and teams on production-grade software.
 
-## Overview
+## Company
 
-Pragnya partners with founders and teams to design, build, and deploy production-grade AI systems, modern web applications, and resilient architecture — without the technical debt that slows you down.
+- Company: Pragnya Works
+- Founder: [Shubhojeet Bera](https://www.linkedin.com/in/shubhobera)
+- Founded: 2026
+- Website: https://www.pragnyaa.in
+- GitHub: https://github.com/pragnya-works
+- Contact: shubhojeet@pragnyaa.in
 
 ## Products
 
-- [Edward](https://github.com/pragnya-works/edward): An agentic web app builder we built in-house. Founders describe a product in chat, Edward plans and generates the app in a sandbox, and the result can be previewed before syncing to GitHub.
+- [Edward](https://edwardd.app): An AI software development platform built and operated by Pragnya Works. Edward turns natural-language requirements into runnable web applications through planning, code generation and editing, sandboxed execution, debugging, live previews, and GitHub sync. Public launch in January 2026.
+- [Edward source code](https://github.com/pragnya-works/Edward): The Edward repository on GitHub.
 - [Edward demo](https://www.youtube.com/watch?v=zIBuOmr92_s): Video walkthrough of Edward building an app.
 
-## Links
+Edward supports Claude through Anthropic's API alongside OpenAI and Gemini. Users connect a provider with their own API key.
 
-- [Pragnya home](https://www.pragnyaa.in/): Landing page with services, work, and contact.
-- [Pragnya on GitHub](https://github.com/pragnya-works): Open-source work and repositories.
+## Pages
 
-## Contact
+- [Home](https://www.pragnyaa.in/): Company overview, Edward, services, and contact.
+- [About Pragnya Works](https://www.pragnyaa.in/about): Company details, founder, and contact.
+- [Edward](https://www.pragnyaa.in/edward): Product profile for Edward.
 
-- [founder@pragnyaa.in](mailto:founder@pragnyaa.in): General inquiries and project discussions.
+## Services
 
-## Keywords
-
-software agency, AI product development, web app development, software engineering, Next.js, React, TypeScript, Tailwind CSS, system architecture, first-principles engineering, resilient systems
+Pragnya Works also works with founders and teams on AI product development, web applications (Next.js, React, TypeScript), system architecture, and technical strategy.
