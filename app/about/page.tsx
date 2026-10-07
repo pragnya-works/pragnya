@@ -77,10 +77,6 @@ export default function AboutPage() {
       <JsonLd graph={pageGraph} />
 
       <div className="space-y-6 leading-relaxed text-paper-muted md:text-lg">
-        <p className="text-xl text-paper md:text-2xl">
-          {`${siteConfig.name} is an independent software and product engineering company based in India. It was founded in ${siteConfig.foundedYear} by `}
-          <TextLink href={founder.linkedinUrl}>{founder.name}</TextLink>.
-        </p>
         <p>
           We do two kinds of work. We build and operate our own AI products. We
           also work with founders and teams on production-grade software, AI
