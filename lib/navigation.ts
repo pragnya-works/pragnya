@@ -1,16 +1,24 @@
 import { siteConfig } from "@/lib/site";
 
-export type NavLink = {
-  href: string;
+export type InternalNavLink = {
   label: string;
-  external?: boolean;
+  /** A typed route, or a pathname+hash pair for in-page anchors. */
+  href: "/about" | "/edward" | { pathname: "/"; hash: "#services" };
 };
 
+export type ExternalNavLink = {
+  label: string;
+  href: string;
+  external: true;
+};
+
+export type NavLink = InternalNavLink | ExternalNavLink;
+
 export const navLinks: readonly NavLink[] = [
-  { href: "/about", label: "About" },
-  { href: "/edward", label: "Edward" },
-  { href: "/#services", label: "Services" },
-  { href: siteConfig.githubUrl, label: "GitHub", external: true },
-] as const;
+  { label: "About", href: "/about" },
+  { label: "Edward", href: "/edward" },
+  { label: "Services", href: { pathname: "/", hash: "#services" } },
+  { label: "GitHub", href: siteConfig.githubUrl, external: true },
+];
 
 export const contactHref = `mailto:${siteConfig.email}`;

@@ -2,7 +2,6 @@ import { MessageSquare, Bot, GitBranch } from "lucide-react";
 import { GitHub } from "@/components/GitHubIcon";
 import { ProductEdwardVideo } from "@/components/ProductEdwardVideo";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { TextLink } from "@/components/TextLink";
 import { edward } from "@/lib/site";
 
 const features = [
@@ -60,7 +59,6 @@ export function ProductEdward() {
             </div>
             <div className="max-w-xl space-y-4 text-sm leading-relaxed text-paper-muted md:text-base">
               <p>{edward.description}</p>
-              <p>{edward.modelSupport}</p>
               <div className="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-sm font-semibold text-accent">
                 <a
                   href={edward.url}
@@ -86,10 +84,6 @@ export function ProductEdward() {
         <ScrollReveal>
           <div className="mb-16">
             <ProductEdwardVideo />
-            <p className="mt-4 text-center text-sm text-paper-muted">
-              Product demo of Edward. Try it at{" "}
-              <TextLink href={edward.url}>edwardd.app</TextLink>.
-            </p>
           </div>
         </ScrollReveal>
 

@@ -10,6 +10,7 @@ export const siteConfig = {
   email: "shubhojeet@pragnyaa.in",
   foundedYear: "2026",
   githubUrl: "https://github.com/pragnya-works",
+  linkedinUrl: "https://www.linkedin.com/company/pragnya-works/",
   keywords: [
     "Pragnya Works",
     "Edward",

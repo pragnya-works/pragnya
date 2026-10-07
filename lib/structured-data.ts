@@ -25,7 +25,7 @@ export const siteGraph = [
     email: siteConfig.email,
     foundingDate: siteConfig.foundedYear,
     founder: ref(schemaIds.founder),
-    sameAs: [siteConfig.githubUrl],
+    sameAs: [siteConfig.githubUrl, siteConfig.linkedinUrl],
     contactPoint: [
       {
         "@type": "ContactPoint",

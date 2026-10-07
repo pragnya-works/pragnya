@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 import { contactHref, navLinks } from "@/lib/navigation";
 
 export function MobileMenu() {
@@ -81,19 +82,29 @@ export function MobileMenu() {
           className="flex w-full flex-col gap-4 border-b border-paper/5 bg-ink p-6 shadow-2xl"
           aria-label="Mobile navigation"
         >
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              {...(link.external
-                ? { target: "_blank", rel: "noopener noreferrer" }
-                : {})}
-              className="text-base font-medium text-paper/90 transition hover:text-accent"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            "external" in link ? (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-base font-medium text-paper/90 transition hover:text-accent"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.label}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="text-base font-medium text-paper/90 transition hover:text-accent"
+              >
+                {link.label}
+              </Link>
+            ),
+          )}
           <a
             href={contactHref}
             onClick={() => setOpen(false)}

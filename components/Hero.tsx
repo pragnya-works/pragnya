@@ -1,7 +1,5 @@
 import { CircuitBoard } from "lucide-react";
 import { ButtonLink } from "@/components/ButtonLink";
-import { TextLink } from "@/components/TextLink";
-import { founder, siteConfig } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -26,15 +24,10 @@ export function Hero() {
           <span className="text-gradient-accent">that ship and scale.</span>
         </h1>
 
-        <p className="balanced-text mb-6 max-w-2xl text-lg leading-relaxed text-paper-muted md:text-xl">
+        <p className="balanced-text mb-10 max-w-2xl text-lg leading-relaxed text-paper-muted md:text-xl">
           Pragnya Works builds and operates AI products while partnering with
           founders and teams on production-grade software, AI systems, and
           resilient infrastructure.
-        </p>
-
-        <p className="mb-10 max-w-2xl text-sm leading-relaxed text-paper-muted md:text-base">
-          {`${siteConfig.name} is an independent software company founded in ${siteConfig.foundedYear} by `}
-          <TextLink href={founder.linkedinUrl}>{founder.name}</TextLink>.
         </p>
 
         <div className="flex flex-col gap-4 sm:flex-row">

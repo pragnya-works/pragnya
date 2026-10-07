@@ -19,18 +19,27 @@ export function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              {...(link.external
-                ? { target: "_blank", rel: "noopener noreferrer" }
-                : {})}
-              className="text-sm font-medium text-paper/70 transition-colors hover:text-accent"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            "external" in link ? (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-paper/70 transition-colors hover:text-accent"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="text-sm font-medium text-paper/70 transition-colors hover:text-accent"
+              >
+                {link.label}
+              </Link>
+            ),
+          )}
           <a
             href={contactHref}
             className="rounded-sm border border-paper/10 bg-paper/5 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-paper transition hover:border-accent/30 hover:text-accent"

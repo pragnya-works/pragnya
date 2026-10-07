@@ -37,12 +37,12 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href={founder.linkedinUrl}
+                  href={siteConfig.linkedinUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={linkClass}
                 >
-                  Founder on LinkedIn
+                  LinkedIn
                 </a>
               </li>
               <li>
